@@ -1,0 +1,10 @@
+__pycache__/
+tests/
+docs/
+.git/
+.gitignore
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+requirements-dev.txt

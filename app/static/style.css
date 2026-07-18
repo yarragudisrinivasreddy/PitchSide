@@ -1,0 +1,138 @@
+/* PitchSide UI — WCAG 2.1 AA: contrast >= 4.5:1, visible focus, reduced motion. */
+
+:root {
+  --ink: #10241c;
+  --paper: #f6faf7;
+  --accent: #0b6e4f;
+  --accent-ink: #ffffff;
+  --line: #c9d8cf;
+  --alert: #8a1c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: 0 1rem 3rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 0.5rem 1rem;
+}
+
+.skip-link:focus { left: 0.5rem; top: 0.5rem; z-index: 10; }
+
+header { padding-top: 1.5rem; }
+
+h1 { margin: 0; font-size: 2rem; color: var(--accent); }
+
+.tagline { margin-top: 0.25rem; }
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+}
+
+legend { font-weight: 600; padding: 0 0.4rem; }
+
+label { display: block; margin-top: 0.75rem; font-weight: 600; }
+
+fieldset label { display: inline-flex; align-items: center; gap: 0.35rem; margin: 0; font-weight: 400; }
+
+textarea, select {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  font: inherit;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+button {
+  margin-top: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover { background: #095a41; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #073b2c;
+  outline-offset: 2px;
+}
+
+.chips { margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.chip {
+  margin-top: 0;
+  background: #ffffff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.chip:hover { background: #e6f2ec; }
+
+.panel {
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #ffffff;
+  min-height: 2rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+ul#zones-list { list-style: none; padding: 0; }
+
+ul#zones-list li {
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: #ffffff;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.status-critical, .status-busy { color: var(--alert); font-weight: 700; }
+
+.status-steady, .status-quiet { color: var(--accent); font-weight: 600; }
+
+.hint { margin: 0.3rem 0 0; font-size: 0.9rem; color: #33443c; }
+
+section { margin-top: 2.25rem; }
+
+footer { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

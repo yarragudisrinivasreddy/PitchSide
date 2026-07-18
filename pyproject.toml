@@ -1,0 +1,44 @@
+[project]
+name = "pitchside"
+version = "1.1.1"
+description = "GenAI match-day copilot for FIFA World Cup 2026 stadium operations."
+authors = [{ name = "Srinivas Reddy Yarragudi" }]
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.design]
+# Dependency-injection constructors legitimately accept one collaborator per
+# service; single-responsibility service classes legitimately expose one
+# public method.
+max-args = 12
+max-positional-arguments = 12
+max-attributes = 12
+min-public-methods = 1
+
+[tool.pylint.similarities]
+min-similarity-lines = 8
+ignore-imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.report]
+precision = 2
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+ignore_missing_imports = true
+exclude = ["tests/"]
